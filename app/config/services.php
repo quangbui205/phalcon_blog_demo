@@ -110,3 +110,19 @@ $di->setShared('session', function () {
 
     return $session;
 });
+
+
+/**
+ * Redis cache
+ */
+$di->setShared('redis', function() {
+    $config = $this->getConfig();
+    $redis  = new Redis();
+    $redis->connect($config->redis->host, $config->redis->port);
+    if($config->redis->auth) {
+       if (!$redis->auth($config->redis->auth)) {
+            return false;
+       }
+    }
+    return $redis;
+});

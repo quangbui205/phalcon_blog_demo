@@ -29,5 +29,10 @@ return new \Phalcon\Config([
         // of the webpspace.  This will break if the public/index.php entry point is moved or
         // possibly if the web server rewrite rules are changed. This can also be set to a static path.
         'baseUri'        => preg_replace('/public([\/\\\\])index.php$/', '', $_SERVER["PHP_SELF"]),
+    ],
+    'redis' => [
+        'host' => '127.0.0.1',
+        'port' => 6379, 
+        'auth' => 'ducbui'
     ]
 ]);
