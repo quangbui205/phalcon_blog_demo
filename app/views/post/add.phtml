@@ -1,0 +1,47 @@
+
+<div class="container">
+    <h1>
+        Add New Post
+    </h1>
+
+    <form action="/Phalcon/demoTemplate/post/create" method='post' enctype="multipart/form-data">
+        <p>
+            <label>
+                Title
+            </label>
+            <?php echo $form->render('title',[
+                'maxlength'   => 30,
+                'placeholder' => 'Title',
+                'class' => 'form-control'
+            ]);
+            $messages = $form->getMessagesFor('name');
+
+            foreach ($messages as $message) {
+                echo $message, '<br>';
+            }?>
+        </p>
+        <p>
+            <label>
+            Description
+            </label>
+            <?php echo $form->render('description',[
+                'class' => 'form-control',
+                'row' => 5,
+                ]); ?>
+        </p>
+        <p>
+            <label>
+                Image
+            </label>
+            <?php echo $form->render('image',[
+               'class' => 'form-control'
+            ]);
+            ?>
+        </p>
+    <p>
+        <input type='submit' value='Save' class="btn btn-info"/>
+        <button type="button" class="btn btn-danger ml-3">Cancel</button>
+    </p>
+    </form>
+</div>
+

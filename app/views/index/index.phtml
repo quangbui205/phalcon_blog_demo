@@ -1,0 +1,51 @@
+<div id="featured_project">
+    <div id="slider">
+        <ul id="sliderContent">
+            <li class="sliderImage">
+                <a href=""><img src="../../../../../Phalcon/demoTemplate/public/images/slider/1.jpg" alt="1" /></a>
+                <span class="top"><strong>Project 1</strong><br />Suspendisse turpis arcu, dignissim ac laoreet a, condimentum in massa.</span>
+            </li>
+            <li class="sliderImage">
+                <a href=""><img src="../../../../../Phalcon/demoTemplate/public/images/slider/2.jpg" alt="2" /></a>
+                <span class="bottom"><strong>Project 2</strong><br />uisque eget elit quis augue pharetra feugiat.</span>
+            </li>
+            <li class="sliderImage">
+                <img src="../../../../../Phalcon/demoTemplate/public/images/slider/3.jpg" alt="3" />
+                <span class="left"><strong>Project 3</strong><br />Sed et quam vitae ipsum vulputate varius vitae semper nunc.</span>
+            </li>
+            <li class="sliderImage">
+                <img src="../../../../../Phalcon/demoTemplate/public/images/slider/4.jpg" alt="4" />
+                <span class="right"><strong>Project 4</strong><br />Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
+            </li>
+            <li class="clear sliderImage"></li>
+        </ul>
+    </div>
+</div>
+
+<div id="templatemo_main">
+    <div class="post_section">
+        <span class="comment"><a href="/Phalcon/demoTemplate/post/detail">128</a></span>
+        <h2><a href="/Phalcon/demoTemplate/post/detail">Aliquam lorem ante dapibus</a></h2>
+        December 28, 2048 | <strong>Author:</strong> John | <strong>Category:</strong> Freebies
+        <img src="../../../../../Phalcon/demoTemplate/public/images/templatemo_image_01.jpg" alt="image 1" />
+        <p>Clean Blog is a Free HTML-CSS Template provided by templatemo.com for everyone. Validate XHTML &amp; CSS. Donec enim enim, imperdiet quis, mollis a, elementum a, diam. Lorem ipsum  dolor sit amet, consectetur adipiscing elit. Nulla et nunc commodo ante ornare imperdiet.</p>
+        <a href="/Phalcon/demoTemplate/post/detail">Continue reading...</a>
+    </div>
+    <?php
+    if($posts->count()>0){
+        foreach ($posts as $post)
+        {
+        ?>
+    <div class="post_section">
+        <span class="comment"><a href="/Phalcon/demoTemplate/post/detail">128</a></span>
+        <h2><a href="/Phalcon/demoTemplate/post/detail"><?php echo $post->title; ?></a></h2>
+        December 28, 2048 | <strong>Author:</strong> John | <strong>Category:</strong> Freebies
+        <img src="../../../../../Phalcon/demoTemplate/public/images/post/<?php echo $post->image;?>" alt="image 1"  style="width: 420px; height: 150px"/>
+        <p><?php echo $post->description ?></p>
+        <a href="/Phalcon/demoTemplate/post/detail/<?php echo $post->id?>">Continue reading...</a>
+    </div>
+    <?php }} ?>
+</div>
+<?php //echo $this->flashSession->output(); ?>
+
+<div class="cleaner"></div>

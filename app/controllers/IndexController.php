@@ -1,11 +1,17 @@
 <?php
 
+use Phalcon\Tag;
+
 class IndexController extends ControllerBase
 {
+    public function initialize()
+    {
+        $this->tag->setTitle('Blog Phalcon Demo');
+    }
 
     public function indexAction()
     {
-        echo '<h1>Hello World!</h1>';
+        $this->view->posts = Posts::find();
     }
 
     public function testAction()
