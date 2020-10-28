@@ -66,13 +66,41 @@ class PostController extends ControllerBase
         return $this->response->redirect('index/index');
     }
 
-    public function edit()
+    public function editAction($id)
+    {
+        $post = Posts::find($id);
+        $formEdit = new Form();
+        $formEdit->add(
+            new Text(
+                'title',
+                [
+                    'maxlength'   => 30,
+                    'value' => $post[0]->title,
+                ]
+            )
+        );
+        $formEdit->add(
+            new TextArea(
+                'description',
+                [
+                    'value' => $post[0] ->description
+                ]
+            )
+        );
+        $this->view->form = $formEdit;
+    }
+
+    public function updateAction()
     {
 
     }
 
-    public function update()
+    public function deleteAction($id)
     {
+
+        $post = Posts::find($id);
+        $post->delete();
+        return $this->response->redirect('index/index');
 
     }
 

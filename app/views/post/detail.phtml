@@ -2,7 +2,8 @@
 
     <div class="post_section">
         <div class="row">
-            <span class="btn btn-primary col-md-2 ml-md-auto"><a href="">Edit</a></span>
+            <button type="button" class="btn btn-outline-primary col-md-2 ml-md-auto"><a href="/Phalcon/demoTemplate/post/edit/<?php echo $post->id?>">Edit</a></button>
+            <span class="btn btn-outline-danger col-md-2 ml-3" onclick="confirm('Are you sure?')"><a  href="/Phalcon/demoTemplate/post/delete/<?php echo $post->id?>">Delete</a></span>
         </div>
 
 
@@ -62,8 +63,6 @@
                     </li>
 
                     <li>
-
-
                         <ol class="comments">
 
                             <li>

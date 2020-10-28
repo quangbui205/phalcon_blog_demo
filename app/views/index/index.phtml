@@ -37,8 +37,8 @@
         {
         ?>
     <div class="post_section">
-        <span class="comment"><a href="/Phalcon/demoTemplate/post/detail">128</a></span>
-        <h2><a href="/Phalcon/demoTemplate/post/detail"><?php echo $post->title; ?></a></h2>
+        <span class="comment"><a href="/Phalcon/demoTemplate/post/detail/<?php echo $post->id?>">128</a></span>
+        <h2><a href="/Phalcon/demoTemplate/post/detail/<?php echo $post->id?>"><?php echo $post->title; ?></a></h2>
         December 28, 2048 | <strong>Author:</strong> John | <strong>Category:</strong> Freebies
         <img src="../../../../../Phalcon/demoTemplate/public/images/post/<?php echo $post->image;?>" alt="image 1"  style="width: 420px; height: 150px"/>
         <p><?php echo $post->description ?></p>
